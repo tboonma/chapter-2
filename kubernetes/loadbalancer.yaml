@@ -3,9 +3,9 @@ kind: Service
 metadata:
   name: example-3
 spec:
+  type: LoadBalancer
   selector:
-      pod: example3-pod
+    pod: example3-pod
   ports:
-    - protocol: TCP
-      port: 8000
+    - port: 30002
       targetPort: 8000
