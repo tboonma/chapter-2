@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-3
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      pod: example3-pod
+  template:
+    metadata:
+      labels:
+        pod: example3-pod
+    spec:
+      containers:
+        - name: ch2ex3
+          image: ghcr.io/tboonma/ch2ex3
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: ghcr-tboonma
